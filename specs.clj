@@ -16,11 +16,22 @@
 (s/def ::problem-013 #(= [20 30 40] %))
 
 ;; Am I doing this right? Feels like I might be missing something.
-;; I could be making finer-grained specs and composing them,
-;; but would that not be pointless, considering that #3 need not just be
-;; a *string* and *capitalized*, it needs to satisfy `#(= "HELLO WORLD" %)`.
-;; So far there has been a single clear answer,
-;; But that is about to change.
+
+;; Yes, I may be beginning to understand.
+;; This is all completely wrong!
+;; We need to actually step outside of these examples
+;; and get to the heart of each problem.
+;; Ask this: how would you generate a random example test?
+;; This could be potentially useful - you could show the user a new,
+;; spec-generated version of the problem every time.
+
+;; I can't decide whether #1 is impossible to spec or trivially easy,
+;; because it can be any truthy value.
+
+;; To do #2 right (capitalizing "hello world"), I don't want to just
+;; show the user a random string.
+;; I want it to be 2 actual simple English words. 
+;; Fortunately, I already have a list of those from another project...
 
 (comment
   (s/valid? ::problem-001 false)
